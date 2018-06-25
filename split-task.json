@@ -1,0 +1,27 @@
+{
+    "input": {
+      "dataset": 2
+    },
+    "taskDefinition": {
+      "runner": {
+        "type": "docker-json-runner",
+        "manifest": {
+          "*": {
+            "image": "computes/fibonacci-sum-split:latest"
+          }
+        }
+      },
+      "result": {
+        "action": "set",
+        "destination": {
+          "dataset": { 
+            "init": "simple-task-results"
+          },
+          "path": "split/results"
+        }
+      }
+    },
+    "status": {
+      "init": "split-task-status"
+    }
+  }
